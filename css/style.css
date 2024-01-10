@@ -15,7 +15,12 @@ body {
 }
 
 .container {
-  padding: 0 20px 0 20px;
+  padding: 0 20px;
+}
+@media (min-width: 640px) {
+  .container {
+    padding: 0 64px;
+  }
 }
 
 .title {
@@ -29,31 +34,65 @@ body {
 
 .header {
   background-color: rgb(255, 255, 255);
-  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .header__logo {
-  display: flex;
-  justify-content: center;
-  padding: 26px 0 29px 0;
+  text-align: center;
+  padding: 29px 0 26px 0;
+  order: 0;
+}
+@media (min-width: 640px) {
+  .header__logo {
+    order: 1;
+    height: 400px;
+    padding-top: 39px;
+  }
 }
 
 .logotype {
   background-color: rgb(36, 36, 36);
 }
+@media (min-width: 640px) {
+  .logotype {
+    background-color: #000000;
+    background-image: url("../img/back-tablet (1).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
 
 .header__navigation {
-  margin-top: -1px;
+  display: flex;
+  flex-direction: column;
+  order: 1;
+}
+@media (min-width: 640px) {
+  .header__navigation {
+    order: 0;
+  }
 }
 
 .nav {
   background-color: #826550;
 }
+@media (min-width: 640px) {
+  .nav {
+    background-color: #000;
+  }
+}
 
 .nav__list {
   display: flex;
-  justify-content: space-between;
   list-style: none;
+}
+@media (min-width: 640px) {
+  .nav__list {
+    gap: 34px;
+    padding: 24px 0 24px 0;
+    justify-content: center;
+  }
 }
 
 .nav__item a {
@@ -61,74 +100,172 @@ body {
   text-transform: uppercase;
   color: #FFF;
 }
+@media (min-width: 640px) {
+  .nav__item a {
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav__item:last-child {
+    display: none;
+  }
+}
 
 .btn-burger {
   width: 70px;
   height: auto;
   background-color: #6A4D38;
 }
-
-.page-main__description {
-  display: flex;
-  flex-direction: column;
-  padding: 28px 0 28px 0;
+@media (min-width: 640px) {
+  .btn-burger {
+    display: none;
+  }
 }
 
-.description {
+.stats {
+  background: #353535;
+}
+
+@media (min-width: 640px) {
+  .stats__container {
+    padding: 0 64px;
+    position: relative;
+    top: -172px;
+    margin-bottom: -172px;
+  }
+}
+
+.stats__header {
+  padding: 28px 0;
   background-color: #FFF;
 }
-
-.description__title {
-  margin-bottom: 13px;
+@media (min-width: 640px) {
+  .stats__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 32px 34px 30px 34px;
+  }
 }
 
-.description__text {
+.stats__title {
+  margin-bottom: 13px;
+}
+@media (min-width: 640px) {
+  .stats__title {
+    text-align: left;
+    font-size: 40px;
+    margin-bottom: 24px;
+    text-transform: none;
+  }
+}
+
+.stats__header-text {
   text-align: center;
-  font-family: PT Sans Narrow;
+  font-family: "PT Sans Narrow";
   font-size: 20px;
   line-height: 27px;
 }
 
-.statistic {
-  background: #4E4E4E;
-}
-
-.statistic__list {
+.stats__list {
   color: rgb(255, 255, 255);
 }
+@media (min-width: 640px) {
+  .stats__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
+  }
+}
 
-.statistic__item {
+.stats__item {
   display: flex;
   justify-content: space-between;
-  padding: 20px 20px 20px 20px;
+  padding: 20px;
+  background-color: #4E4E4E;
+}
+@media (min-width: 640px) {
+  .stats__item {
+    display: block;
+    padding: 25px 34px 30px 34px;
+  }
 }
 
-.statistic__item:nth-child(1) {
+.stats__item:nth-child(1) {
+  background-color: #353535;
+}
+@media (min-width: 640px) {
+  .stats__item:nth-child(1) {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.stats__item:nth-child(3) {
   background-color: #353535;
 }
 
-.statistic__item:nth-child(3) {
-  background-color: #353535;
+@media (min-width: 640px) {
+  .stats__item:nth-child(4) {
+    background: rgba(255, 255, 255, 0.05);
+  }
 }
 
-.statistic__callout {
+.stats__callout {
+  display: block;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.stats__callout--top {
+  display: none;
+}
+@media (min-width: 640px) {
+  .stats__callout--top {
+    color: rgba(0, 0, 0, 0.3);
+    display: block;
+  }
+}
+
+.stats__callout--bottom {
   color: rgba(255, 255, 255, 0.3);
   text-align: center;
-  padding: 20px 20px 20px 20px;
+  padding: 20px;
   background: #242424;
 }
+@media (min-width: 640px) {
+  .stats__callout--bottom {
+    display: none;
+  }
+}
 
-.statistic__num {
+.stats__num {
   font-size: 40px;
   font-weight: 700;
   line-height: 40px;
 }
+@media (min-width: 640px) {
+  .stats__num {
+    font-size: 72px;
+    line-height: 72px;
+    margin-bottom: 12px;
+  }
+}
 
-.statistic__text {
+.stats__text {
   text-align: right;
   font-size: 18px;
   font-weight: 400;
   line-height: 18px;
+}
+@media (min-width: 640px) {
+  .stats__text {
+    display: block;
+    text-align: left;
+  }
+  .stats__text br {
+    display: none;
+  }
 }
 
 .reasons {
