@@ -500,6 +500,7 @@ body {
     gap: 20px;
     @media (min-width: 640px) {
         display: flex;
+        padding: 31px 30px 36px 30px;
     }
 }
 
@@ -523,6 +524,9 @@ body {
 
 .slider-points{
     margin-bottom: 18px;
+    @media (min-width: 640px) {
+        margin-bottom: 66px;
+    }
 }
 
 
@@ -532,24 +536,45 @@ body {
     padding-top: 33px;
     background-color: #292929;
     color: #FFF;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-footer__container{
+    @media (min-width: 640px) {
+        padding: 0 64px;
+        display: grid;
+        row-gap: 50px;
+    }
+}
+
+.page-footer__address-container{
+    @media (min-width: 640px) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .page-footer__title-container{
     display: block;
     width: 195px;
     margin: 0 auto;
+    text-align: center;
     margin-bottom: 17px;
+    @media (min-width: 640px) {
+        margin: 0;
+        width: auto;
+        text-align: left;
+    }
 }
 
 .page-footer__title{
-    text-align: center;
     font-size: 18px;
     font-weight: 700;
     line-height: 27px;
 }
 
 .page-footer__address{
-    text-align: center;
     font-size: 18px;
     font-weight: 400;
     line-height: 27px;
@@ -569,17 +594,29 @@ body {
     line-height: 27px;
     padding: 12px 0;
     cursor: pointer;
-}
-
-.page-footer__list{
-    list-style-type: none;
-    margin-bottom: 31px;
+    @media (min-width: 640px) {
+        order: 1;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        border: none;
+        text-align: left;
+        font-weight: 400;
+    }
 }
 
 .networks{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
+    list-style-type: none;
+    margin-bottom: 31px;
+    order: 2;
+    @media (min-width: 640px) {
+        order: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
 }
 
 .networks__item{
@@ -617,6 +654,9 @@ body {
     line-height: 27px;
     padding: 12px 0;
     cursor: pointer;
+    @media (min-width: 640px) {
+        margin: 0;
+    }
 }
 
 .page-footer__button a{
@@ -632,4 +672,16 @@ body {
 
 .page-footer__developer{
     padding-bottom: 24px;
+    order: 3;
+    @media (min-width: 640px) {
+        order: 2;
+        display: flex;
+        justify-content: end;
+        padding: 0;
+    }
+}
+
+.developer__title{
+    text-align: center;
+    margin-bottom: 13px;
 }
